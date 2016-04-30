@@ -1,0 +1,56 @@
+Homework 2
+Ayush Rath - 904581137
+----------------------
+
+3.60)
+A) x is in %rdi
+   n is in %esi
+   result is in %eax
+   mask is in %rdx
+
+B) result = 0;
+   mask = 1;
+
+C) mask != 0;
+
+D) mask = mask << n;
+
+E) result |= (mask & x);
+
+F)
+
+long loop(long x, long n)
+{
+  long result;
+  long mask;
+  for(mask = 1; mask != 0; mask mask << n)
+  {
+    result |= (mask & x);
+  }
+  return result;
+}
+
+3.63)
+
+long switch_prob(long x, long n)
+{
+  long result = x;
+  switch(n)
+  {
+    case 0:
+    case 2:
+      result *=8;
+      break;
+    case 3:
+      result >>= 3;
+      break;
+    case 4:
+      result = (result << 4) - result;
+    case 5:
+      result *= result;
+    case 1:
+    default:
+      result += 75;
+  }
+  return result;
+}

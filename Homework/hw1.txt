@@ -1,0 +1,38 @@
+Homework 1 - Ayush Rath - 904581137
+----------
+
+2.71
+----
+A) This code will store the desired byte in a 32 bit integer as the least
+significant byte, preceded by 3 bytes filled with 0s, so it is not sign extended
+properly for negative values.
+
+B)
+int xbyte(packed_t word, int bytenum)
+{
+  return (((int)((word >> (bytenum << 3)) & OxFF)) << 24) >> 24;
+}
+
+2.82
+----
+A) This expression always yields 1.
+If a integer y is greater than another integer x, -y is less than -x, since it
+is further from 0.
+
+B) This expression always yields 1
+(x+y) << 4 is equivalent to 16*x+16*y. By adding y and subtracting x, this becomes
+17*y + 15*x
+
+C) This expression always yields 1/
+For a two's complement integer a, ~a + a = -1, thus ~(x+y) is the
+same as (-x-y)-1. ~x + ~y + 1 is the same as (-x-1) + (-y-1) + 1 which is equivalent
+to (-x-y)-1, thus both sides are equivalent.
+
+D) This expression always yields 1
+(unsigned)(y-x) is takes the integer produced by y-x and casts it to unsigned.
+Negating this results in UMax - (unsigned)(y-x).
+(ux - uy) is the same as UMax + ux - uy, the resulting integer produced by each
+side of the expression is equivalent.
+
+E) This expression does not always yield 1.
+If x = -5, the right side is -5 and the left side is -4, which results in 0.
