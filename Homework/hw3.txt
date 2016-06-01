@@ -1,0 +1,29 @@
+/************************************************
+Homework 3
+Ayush Rath - 904581137
+************************************************/
+//6.45)
+
+void transpose(int *dst, int *src, int dim)
+{
+        int i, j, l, k, lN, kN;
+        int b = 16;
+        for (i = 0; i < dim; i+=b)
+        {
+                for (j = 0; j < dim; j+=b)
+                {
+                        lN = 0;
+                        for(l = i; (l < i+b) && l < dim; l++)
+                        {
+                                kN = 0;
+                                for(k = j; (k < j+b) && k < dim; k++)
+                                {
+                                        dst[k+lN] = src[l+kN];
+                                        kN += dim;
+                                }
+                                lN+=dim;
+                        }
+
+                }
+        }
+}
